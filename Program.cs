@@ -31,12 +31,27 @@
 
 //Console.ResetColor();
 //// END OF GRADE CALCULATOR
+
+
+//Console.WriteLine("WELCOME TO `Ticket Price Calculator (RB)`");
+//Console.Write("Enter the age: ");
+//int age = int.Parse(Console.ReadLine());
+//int price = (age <= 12 || age>= 65 ? 7 : 10);
+//Console.WriteLine($"Ticket Price: GHC {price}.00");
+//Console.WriteLine("END OF `Ticket Price Calculator (RB)`");
+
+
+using System.Runtime.Intrinsics.Arm;
+
 ///
-
-
-Console.WriteLine("WELCOME TO `Ticket Price Calculator (RB)`");
-Console.Write("Enter the age: ");
-int age = int.Parse(Console.ReadLine());
-int price = (age <= 12 || age>= 65 ? 7 : 10);
-Console.WriteLine($"Ticket Price: GHC {price}.00");
-Console.WriteLine("END OF `Ticket Price Calculator (RB)`");
+Console.WriteLine("WELCOME TO `Triangle Type Identifier (RB)`");
+Console.Write("Enter A Side (1): ");
+int s1 = int.Parse(Console.ReadLine());
+Console.Write("Enter A Side (2): ");
+int s2 = int.Parse(Console.ReadLine());
+Console.Write("Enter A Side (3): ");
+int s3 = int.Parse(Console.ReadLine());
+if (s1 == s2 && s2 == s3) Console.WriteLine("Equilateral");
+else if (s1 == s2 || s2 == s3 || s1 == s3) Console.WriteLine("Isosceles");
+else Console.WriteLine("Scalene");
+Console.WriteLine("END OF `Triangle Type Identifier (RB)`");
