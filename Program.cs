@@ -1,60 +1,40 @@
-﻿while (true)
+﻿class Program
 {
-    Console.WriteLine("\n=== MAIN MENU ===");
-    Console.WriteLine("1. Grade Calculator");
-    Console.WriteLine("2. Ticket Price Calculator");
-    Console.WriteLine("3. Triangle Type Identifier");
-    Console.WriteLine("0. Exit");
-    Console.Write("Select an option: ");
-    string? choice = Console.ReadLine();
-
-    if (choice == "1")
+    static void Main()
     {
-        Console.ForegroundColor = ConsoleColor.Blue;
-        //Console.BackgroundColor = ConsoleColor.DarkGreen;
-        Console.WriteLine("WELCOME TO `GRADE CALCULATOR(RB)`");
-
-        int grade;
-
         while (true)
         {
-            Console.Write("Enter a valid integer score: ");
-            string input = Console.ReadLine();
-            try
+            Console.WriteLine("\n=== MAIN MENU ===");
+            Console.WriteLine("1. Grade Calculator");
+            Console.WriteLine("2. Ticket Price Calculator");
+            Console.WriteLine("3. Triangle Type Identifier");
+            Console.WriteLine("0. Exit");
+            Console.Write("Select an option: ");
+            string? choice = Console.ReadLine();
+
+            if (choice == "1")
             {
-                grade = int.Parse(input);
-                break;
+                GradeCalculator();
             }
-            catch (Exception)
+
+            else if (choice == "2")
             {
-                Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine("Invalid input. Please enter a valid integer score like '49'");
-                Console.ResetColor();
+                TicketPriceCalculator();
+            }
+
+            if (choice == "3")
+            {
+                TriangleIdentifier();
+            }
+
+            else if (choice == "0")
+            {
+                Console.WriteLine("Exiting. Goodbye!");
+                break;
             }
         }
 
-        Console.WriteLine($"You entered {grade}.");
-        Console.Write($"That is an ");
-        if (grade >= 90) Console.WriteLine("A.");
-        else if (grade >= 80) Console.WriteLine("B.");
-        else if (grade >= 70) Console.WriteLine("C.");
-        else if (grade >= 60) Console.WriteLine("D.");
-        else Console.WriteLine("F.");
-
-        Console.ResetColor(); }
-    // END OF GRADE CALCULATOR }
-
-    else if (choice == "2")
-    {
-        Console.WriteLine("WELCOME TO `Ticket Price Calculator (RB)`");
-        Console.Write("Enter the age: ");
-        int age = int.Parse(Console.ReadLine());
-        int price = (age <= 12 || age >= 65 ? 7 : 10);
-        Console.WriteLine($"Ticket Price: GHC {price}.00");
-        Console.WriteLine("END OF `Ticket Price Calculator (RB)`");
-    }
-
-        if (choice == "3")
+        static void TriangleIdentifier()
         {
             Console.WriteLine("WELCOME TO `Triangle Type Identifier (RB)`");
             Console.Write("Enter Length of Side (1): ");
@@ -69,9 +49,90 @@
             Console.WriteLine("END OF `Triangle Type Identifier (RB)`");
         }
 
-    else if (choice == "0")
+        static void TicketPriceCalculator()
         {
-            Console.WriteLine("Exiting. Goodbye!");
-            break;
+            Console.WriteLine("WELCOME TO `Ticket Price Calculator (RB)`");
+            Console.Write("Enter the age: ");
+            int age = int.Parse(Console.ReadLine());
+            int price = (age <= 12 || age >= 65 ? 7 : 10);
+            Console.WriteLine($"Ticket Price: GHC {price}.00");
+            Console.WriteLine("END OF `Ticket Price Calculator (RB)`");
         }
+
+        static void GradeCalculator()
+        {
+                Console.ForegroundColor = ConsoleColor.Blue;
+                //Console.BackgroundColor = ConsoleColor.DarkGreen;
+                Console.WriteLine("WELCOME TO `GRADE CALCULATOR(RB)`");
+
+                int grade;
+
+                while (true)
+                {
+                    Console.Write("Enter a valid integer score: ");
+                    string input = Console.ReadLine();
+                    try
+                    {
+                        grade = int.Parse(input);
+                        break;
+                    }
+                    catch (Exception)
+                    {
+                        Console.ForegroundColor = ConsoleColor.Red;
+                        Console.WriteLine("Invalid input. Please enter a valid integer score like '49'");
+                        Console.ResetColor();
+                    }
+                }
+
+                Console.WriteLine($"You entered {grade}.");
+                Console.Write($"That is an ");
+                if (grade >= 90) Console.WriteLine("A.");
+                else if (grade >= 80) Console.WriteLine("B.");
+                else if (grade >= 70) Console.WriteLine("C.");
+                else if (grade >= 60) Console.WriteLine("D.");
+                else Console.WriteLine("F.");
+
+                Console.ResetColor();
+                }
+
     }
+}
+
+
+//using System;
+
+//class Program
+//{
+//    static void Main()
+//    {
+//        while (true)
+//        {
+//            Console.WriteLine("\n--- DCIT 318 Assignment Menu ---");
+//            Console.WriteLine("1. Grade Calculator");
+//            Console.WriteLine("2. Ticket Price Calculator");
+//            Console.WriteLine("3. Triangle Type Identifier");
+//            Console.WriteLine("4. Exit");
+//            Console.Write("Choose an option: ");
+
+//            string choice = Console.ReadLine();
+
+//            switch (choice)
+//            {
+//                case "1":
+//                    GradeCalculator();
+//                    break;
+//                case "2":
+//                    TicketPriceCalculator();
+//                    break;
+//                case "3":
+//                    TriangleIdentifier();
+//                    break;
+//                case "4":
+//                    return;
+//                default:
+//                    Console.WriteLine("Invalid option. Try again.");
+//                    break;
+//            }
+//        }
+//    }
+//}
